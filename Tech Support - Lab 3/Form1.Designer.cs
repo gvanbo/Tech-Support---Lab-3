@@ -30,15 +30,15 @@ namespace Tech_Support___Lab_3
         private void InitializeComponent()
         {
             this.productsDataGrid = new System.Windows.Forms.DataGridView();
+            this.ProductCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Version = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReleaseDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addBtn = new System.Windows.Forms.Button();
             this.modifyBtn = new System.Windows.Forms.Button();
             this.removeBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
             this.displayCurrentProducttxt = new System.Windows.Forms.TextBox();
-            this.ProductCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Version = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReleaseDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblSelectedProduct = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGrid)).BeginInit();
             this.SuspendLayout();
@@ -59,51 +59,6 @@ namespace Tech_Support___Lab_3
             this.productsDataGrid.Size = new System.Drawing.Size(671, 289);
             this.productsDataGrid.TabIndex = 0;
             this.productsDataGrid.SelectionChanged += new System.EventHandler(this.productsDataGrid_SelectionChanged);
-            // 
-            // addBtn
-            // 
-            this.addBtn.Location = new System.Drawing.Point(21, 395);
-            this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(106, 35);
-            this.addBtn.TabIndex = 1;
-            this.addBtn.Text = "&Add";
-            this.addBtn.UseVisualStyleBackColor = true;
-            // 
-            // modifyBtn
-            // 
-            this.modifyBtn.Location = new System.Drawing.Point(145, 395);
-            this.modifyBtn.Name = "modifyBtn";
-            this.modifyBtn.Size = new System.Drawing.Size(103, 35);
-            this.modifyBtn.TabIndex = 2;
-            this.modifyBtn.Text = "&Modify";
-            this.modifyBtn.UseVisualStyleBackColor = true;
-            // 
-            // removeBtn
-            // 
-            this.removeBtn.Location = new System.Drawing.Point(263, 395);
-            this.removeBtn.Name = "removeBtn";
-            this.removeBtn.Size = new System.Drawing.Size(103, 35);
-            this.removeBtn.TabIndex = 3;
-            this.removeBtn.Text = "&Remove";
-            this.removeBtn.UseVisualStyleBackColor = true;
-            // 
-            // exitBtn
-            // 
-            this.exitBtn.BackColor = System.Drawing.Color.DarkSalmon;
-            this.exitBtn.Location = new System.Drawing.Point(589, 395);
-            this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(103, 35);
-            this.exitBtn.TabIndex = 4;
-            this.exitBtn.Text = "&Exit";
-            this.exitBtn.UseVisualStyleBackColor = false;
-            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
-            // 
-            // displayCurrentProducttxt
-            // 
-            this.displayCurrentProducttxt.Location = new System.Drawing.Point(159, 324);
-            this.displayCurrentProducttxt.Name = "displayCurrentProducttxt";
-            this.displayCurrentProducttxt.Size = new System.Drawing.Size(533, 27);
-            this.displayCurrentProducttxt.TabIndex = 6;
             // 
             // ProductCode
             // 
@@ -130,6 +85,54 @@ namespace Tech_Support___Lab_3
             this.ReleaseDate.DataPropertyName = "ReleaseDate";
             this.ReleaseDate.HeaderText = "Release Date";
             this.ReleaseDate.Name = "ReleaseDate";
+            // 
+            // addBtn
+            // 
+            this.addBtn.Location = new System.Drawing.Point(21, 395);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(106, 35);
+            this.addBtn.TabIndex = 1;
+            this.addBtn.Text = "&Add";
+            this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
+            // 
+            // modifyBtn
+            // 
+            this.modifyBtn.Location = new System.Drawing.Point(145, 395);
+            this.modifyBtn.Name = "modifyBtn";
+            this.modifyBtn.Size = new System.Drawing.Size(103, 35);
+            this.modifyBtn.TabIndex = 2;
+            this.modifyBtn.Text = "&Modify";
+            this.modifyBtn.UseVisualStyleBackColor = true;
+            this.modifyBtn.Click += new System.EventHandler(this.modifyBtn_Click);
+            // 
+            // removeBtn
+            // 
+            this.removeBtn.Location = new System.Drawing.Point(263, 395);
+            this.removeBtn.Name = "removeBtn";
+            this.removeBtn.Size = new System.Drawing.Size(103, 35);
+            this.removeBtn.TabIndex = 3;
+            this.removeBtn.Text = "&Remove";
+            this.removeBtn.UseVisualStyleBackColor = true;
+            this.removeBtn.Click += new System.EventHandler(this.removeBtn_Click);
+            // 
+            // exitBtn
+            // 
+            this.exitBtn.BackColor = System.Drawing.Color.DarkSalmon;
+            this.exitBtn.Location = new System.Drawing.Point(589, 395);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.Size = new System.Drawing.Size(103, 35);
+            this.exitBtn.TabIndex = 4;
+            this.exitBtn.Text = "&Exit";
+            this.exitBtn.UseVisualStyleBackColor = false;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
+            // 
+            // displayCurrentProducttxt
+            // 
+            this.displayCurrentProducttxt.Location = new System.Drawing.Point(159, 324);
+            this.displayCurrentProducttxt.Name = "displayCurrentProducttxt";
+            this.displayCurrentProducttxt.Size = new System.Drawing.Size(533, 27);
+            this.displayCurrentProducttxt.TabIndex = 6;
             // 
             // lblSelectedProduct
             // 

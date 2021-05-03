@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Tech_Support___Lab_3.Models
 {
     public partial class Product
+
     {
         public Product()
         {

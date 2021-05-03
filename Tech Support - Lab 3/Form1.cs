@@ -16,19 +16,25 @@ namespace Tech_Support___Lab_3
     {
         TechSupportContext context;
         Product currentProduct;
+        
 
         public TechnicalSupportFrm()
         {
             InitializeComponent();
         }
 
+        
+
         private void TechnicalSupportFrm_Load(object sender, EventArgs e)
+        {
+            Display();
+        }
+
+        private void Display()
         {
             context = new TechSupportContext();
             productsDataGrid.AutoGenerateColumns = false;
             productsDataGrid.DataSource = context.Products.ToList();
-
-            productsListB.DataSource = context.Products.AsEnumerable();
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
@@ -37,18 +43,50 @@ namespace Tech_Support___Lab_3
         }
 
         public string productId;
-        private void productsDataGrid_SelectionChanged(object sender, EventArgs e)
+        public void productsDataGrid_SelectionChanged(object sender, EventArgs e)
         {
             if (productsDataGrid.SelectedRows.Count > 0)
             {
+
+                currentProduct = (Product)productsDataGrid.SelectedRows[0].DataBoundItem;
                 int index = productsDataGrid.SelectedCells[0].RowIndex;
                 string productId = (string)productsDataGrid.Rows[index].Cells[0].Value;
 
                 
-                displayCurrentProducttxt.Text = productId;
+                displayCurrentProducttxt.Text = productId;          
+                
             }
         }
 
+        /// <summary>
+        /// Removes selected record from Database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void removeBtn_Click(object sender, EventArgs e)
+        {
+            context.Products.Remove(currentProduct);
+            context.SaveChanges();
+            Display();
+            
+        }
 
+        public bool AddButtonSet { get; set; }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            AddModify addNew = new AddModify();
+            addNew.AddButtonSet = true;
+            addNew.ShowDialog();
+            Display();
+        }
+
+        private void modifyBtn_Click(object sender, EventArgs e)
+        {
+            AddModify modifyProduct = new AddModify();
+            modifyProduct.currentProduct = currentProduct;
+            modifyProduct.ShowDialog();
+            Display();
+        }
     }
 }
