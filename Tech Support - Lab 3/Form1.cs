@@ -25,7 +25,7 @@ namespace Tech_Support___Lab_3
         private void TechnicalSupportFrm_Load(object sender, EventArgs e)
         {
             context = new TechSupportContext();
-            productsDataGrid.AutoGenerateColumns = true;
+            productsDataGrid.AutoGenerateColumns = false;
             productsDataGrid.DataSource = context.Products.ToList();
 
             productsListB.DataSource = context.Products.AsEnumerable();
@@ -45,7 +45,7 @@ namespace Tech_Support___Lab_3
                 string productId = (string)productsDataGrid.Rows[index].Cells[0].Value;
 
                 
-                displayCurrentProducttxt.Text = Convert.ToString(productId);
+                displayCurrentProducttxt.Text = productId;
             }
         }
 
