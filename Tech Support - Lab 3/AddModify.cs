@@ -31,8 +31,9 @@ namespace Tech_Support___Lab_3
 
         private void AddModify_Load(object sender, EventArgs e)
         {
-            if (AddButtonSet == false) 
+            if (AddButtonSet == false) // Modify button clicked on form 1
             {
+                productCodeTxt.Enabled = false; // this prevents user from modifying a primary key
                 productCodeTxt.Text = currentProduct.ProductCode;
                 nameTxt.Text = currentProduct.Name;
                 versionTxt.Text = currentProduct.Version.ToString();
@@ -41,9 +42,9 @@ namespace Tech_Support___Lab_3
         }
 
         private void OKBtn_Click(object sender, EventArgs e)
-        {
+        {   
             product = new Product
-            {
+            {   
                 ProductCode = productCodeTxt.Text,
                 Name = nameTxt.Text,
                 Version = Convert.ToDecimal(versionTxt.Text),
@@ -57,9 +58,32 @@ namespace Tech_Support___Lab_3
 
             context.SaveChanges();
 
-            MessageBox.Show($"New product added\nCode: {productCodeTxt.Text}\n" +
+            MessageBox.Show($"Saving this Entry:\nCode: {productCodeTxt.Text}\n" +
                 $"Name: {nameTxt.Text}\nVersion: {versionTxt.Text}\nRelease Date: {releaseDateTxt.Text}");
             this.Close();
+        }
+
+        /// <summary>
+        /// Validate Product Code - not longer than 10 characters, must be unique
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void productCodeTxt_TextChanged(object sender, EventArgs e)
+        {
+            if (productCodeTxt.Text.Length > 10)
+                 MessageBox.Show("This field must be less than 10 characters");
+        }
+
+        private void productCodeTxt_Validating(object sender, CancelEventArgs e)
+        {
+            if (context.Products.Where(p => (p.ProductCode == productCodeTxt.Text)).Count() > 0)
+            {
+                MessageBox.Show("That Product code already exists.  Choose a unique product code");
+                productCodeTxt.Focus();
+                productCodeTxt.SelectAll();
+            }
+
+
         }
     }
 }

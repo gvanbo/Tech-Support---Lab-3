@@ -83,6 +83,8 @@ namespace Tech_Support___Lab_3
             this.productCodeTxt.Name = "productCodeTxt";
             this.productCodeTxt.Size = new System.Drawing.Size(112, 23);
             this.productCodeTxt.TabIndex = 4;
+            this.productCodeTxt.TextChanged += new System.EventHandler(this.productCodeTxt_TextChanged);
+            this.productCodeTxt.Validating += new System.ComponentModel.CancelEventHandler(this.productCodeTxt_Validating);
             // 
             // nameTxt
             // 
@@ -145,7 +147,7 @@ namespace Tech_Support___Lab_3
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddModify";
-            this.Text = "AddModify";
+            this.Text = "Add or Modify";
             this.Load += new System.EventHandler(this.AddModify_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
