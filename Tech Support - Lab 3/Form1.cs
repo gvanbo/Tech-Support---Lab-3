@@ -49,7 +49,7 @@ namespace Tech_Support___Lab_3
             {
 
                 currentProduct = (Product)productsDataGrid.SelectedRows[0].DataBoundItem;
-                int index = productsDataGrid.SelectedCells[0].RowIndex;
+                int index = productsDataGrid.SelectedCells[0].RowIndex;             /// Displays current product in text field for cust info
                 string productId = (string)productsDataGrid.Rows[index].Cells[0].Value;
 
                 
@@ -65,9 +65,20 @@ namespace Tech_Support___Lab_3
         /// <param name="e"></param>
         private void removeBtn_Click(object sender, EventArgs e)
         {
+            DialogResult button = 
+                MessageBox.Show(
+                    "Are you sure that you want to remove the selected record?",
+                    "Remove Item",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button2);
+            if (button == DialogResult.OK)
+            {
             context.Products.Remove(currentProduct);
             context.SaveChanges();
             Display();
+
+            }
             
         }
 
@@ -75,7 +86,7 @@ namespace Tech_Support___Lab_3
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            AddModify addNew = new AddModify();
+            AddModify addNew = new AddModify();    //opens new form to add a record
             addNew.AddButtonSet = true;
             addNew.ShowDialog();
             Display();
@@ -83,8 +94,9 @@ namespace Tech_Support___Lab_3
 
         private void modifyBtn_Click(object sender, EventArgs e)
         {
-            AddModify modifyProduct = new AddModify();
+            AddModify modifyProduct = new AddModify();    // opens a new form  to modify selected record
             modifyProduct.currentProduct = currentProduct;
+            modifyProduct.AddButtonSet = false;
             modifyProduct.ShowDialog();
             Display();
         }

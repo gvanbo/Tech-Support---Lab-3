@@ -56,7 +56,7 @@ namespace Tech_Support___Lab_3
             this.productsDataGrid.Name = "productsDataGrid";
             this.productsDataGrid.RowTemplate.Height = 25;
             this.productsDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.productsDataGrid.Size = new System.Drawing.Size(671, 289);
+            this.productsDataGrid.Size = new System.Drawing.Size(643, 289);
             this.productsDataGrid.TabIndex = 0;
             this.productsDataGrid.SelectionChanged += new System.EventHandler(this.productsDataGrid_SelectionChanged);
             // 
@@ -118,8 +118,9 @@ namespace Tech_Support___Lab_3
             // 
             // exitBtn
             // 
-            this.exitBtn.BackColor = System.Drawing.Color.DarkSalmon;
-            this.exitBtn.Location = new System.Drawing.Point(589, 395);
+            this.exitBtn.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.exitBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.exitBtn.Location = new System.Drawing.Point(561, 395);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(103, 35);
             this.exitBtn.TabIndex = 4;
@@ -131,7 +132,7 @@ namespace Tech_Support___Lab_3
             // 
             this.displayCurrentProducttxt.Location = new System.Drawing.Point(159, 324);
             this.displayCurrentProducttxt.Name = "displayCurrentProducttxt";
-            this.displayCurrentProducttxt.Size = new System.Drawing.Size(533, 27);
+            this.displayCurrentProducttxt.Size = new System.Drawing.Size(207, 27);
             this.displayCurrentProducttxt.TabIndex = 6;
             // 
             // lblSelectedProduct
@@ -148,7 +149,7 @@ namespace Tech_Support___Lab_3
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(712, 453);
+            this.ClientSize = new System.Drawing.Size(687, 453);
             this.Controls.Add(this.lblSelectedProduct);
             this.Controls.Add(this.displayCurrentProducttxt);
             this.Controls.Add(this.exitBtn);

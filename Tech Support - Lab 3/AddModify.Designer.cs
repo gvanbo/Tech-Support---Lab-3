@@ -92,6 +92,7 @@ namespace Tech_Support___Lab_3
             this.nameTxt.Name = "nameTxt";
             this.nameTxt.Size = new System.Drawing.Size(195, 23);
             this.nameTxt.TabIndex = 5;
+            this.nameTxt.TextChanged += new System.EventHandler(this.nameTxt_TextChanged);
             // 
             // versionTxt
             // 
@@ -99,6 +100,7 @@ namespace Tech_Support___Lab_3
             this.versionTxt.Name = "versionTxt";
             this.versionTxt.Size = new System.Drawing.Size(112, 23);
             this.versionTxt.TabIndex = 6;
+            this.versionTxt.Validating += new System.ComponentModel.CancelEventHandler(this.versionTxt_Validating);
             // 
             // releaseDateTxt
             // 
@@ -106,6 +108,7 @@ namespace Tech_Support___Lab_3
             this.releaseDateTxt.Name = "releaseDateTxt";
             this.releaseDateTxt.Size = new System.Drawing.Size(112, 23);
             this.releaseDateTxt.TabIndex = 7;
+            this.releaseDateTxt.Validating += new System.ComponentModel.CancelEventHandler(this.releaseDateTxt_Validating);
             // 
             // OKBtn
             // 
